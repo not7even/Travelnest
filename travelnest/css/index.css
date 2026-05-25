@@ -1,0 +1,98 @@
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 85vh;
+  padding: 60px 80px;
+  background: linear-gradient(135deg, var(--dark) 0%, #1a3a4c 100%);
+  color: var(--white);
+  gap: 40px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: var(--white);
+  transition: opacity 0.5s ease;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #ccc;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-illustration {
+  width: 100%;
+  max-width: 500px;
+}
+
+.hero-illustration img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+
+.dotd-section {
+  padding: 60px 30px;
+  background-color: var(--light);
+  text-align: center;
+}
+
+.dotd-card {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow);
+}
+
+.dotd-image {
+  margin-bottom: 15px;
+}
+
+.dotd-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.dotd-card h3 {
+  font-size: 1.8rem;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.dotd-card p {
+  color: var(--grey);
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-illustration {
+    font-size: 5rem;
+  }
+}

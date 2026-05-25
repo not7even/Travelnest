@@ -1,0 +1,82 @@
+
+.feedback-main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.feedback-form-section,
+.faq-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.feedback-form-section h2,
+.faq-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 10px;
+}
+
+
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  background: var(--light);
+  border: none;
+  padding: 15px 20px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--dark);
+  transition: background var(--transition);
+}
+
+.accordion-header:hover {
+  background: #e0f0ee;
+}
+
+.accordion-header.open {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.accordion-icon {
+  font-size: 1.2rem;
+  transition: transform var(--transition);
+}
+
+.accordion-header.open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-body {
+  display: none;
+  padding: 15px 20px;
+  color: var(--grey);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  background: var(--white);
+}
+
+.accordion-body.open {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}

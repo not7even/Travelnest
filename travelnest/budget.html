@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelNest - Budget Planner</title>
+  <meta name="description" content="Plan your trip budget and calculate your estimated travel costs." />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/budget.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="nav-logo">Travel<span>Nest</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="budget.html">Budget Planner</a></li>
+      <li><a href="generator.html">Trip Generator</a></li>
+      <li><a href="mood.html">Travel Mood</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+    <div class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <h1>💰 Trip Budget Planner</h1>
+    <p>Calculate how much your dream trip will cost</p>
+  </header>
+
+  <main class="budget-main">
+
+    <!-- BUDGET FORM -->
+    <section class="budget-form-section reveal">
+      <h2>Enter Trip Details</h2>
+
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <input type="text" id="destination" placeholder="e.g. Paris, France" required />
+        <span class="error-msg" id="dest-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="days">Number of Days</label>
+        <input type="number" id="days" placeholder="e.g. 7" min="1" required />
+        <span class="error-msg" id="days-error"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="daily-budget">Daily Budget (LKR)</label>
+        <input type="number" id="daily-budget" placeholder="e.g. 10000" min="1" required />
+        <span class="error-msg" id="budget-error"></span>
+      </div>
+
+      <button class="btn btn-primary" id="calculate-btn">Calculate Budget</button>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="budget-results reveal" id="results-section" style="display:none;">
+      <h2>Your Trip Summary</h2>
+
+      <div class="result-card">
+        <div class="result-row">
+          <span>Destination:</span>
+          <strong id="result-dest">-</strong>
+        </div>
+        <div class="result-row">
+          <span>Number of Days:</span>
+          <strong id="result-days">-</strong>
+        </div>
+        <div class="result-row">
+          <span>Daily Budget:</span>
+          <strong id="result-daily">-</strong>
+        </div>
+        <div class="result-row total">
+          <span>Total Estimated Cost:</span>
+          <strong id="result-total">-</strong>
+        </div>
+        <div class="result-row">
+          <span>Budget Status:</span>
+          <strong id="result-status">-</strong>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-container">
+        <p>Budget Level</p>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar"></div>
+        </div>
+        <p id="progress-label">Low</p>
+      </div>
+
+      <button class="btn btn-secondary" id="save-budget-btn">Save This Budget 💾</button>
+    </section>
+
+    <!-- SAVED BUDGETS -->
+    <section class="saved-budgets reveal" id="saved-section">
+      <h2>Saved Budgets</h2>
+      <div id="saved-list">
+        <p style="color:var(--grey);">No saved budgets yet.</p>
+      </div>
+      <button class="btn btn-outline" id="clear-budgets-btn" style="margin-top:15px;">Clear All</button>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>TravelNest</h3>
+        <p style="color:#ccc; font-size:0.9rem;">Your travel planning companion.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="budget.html">Budget Planner</a></li>
+          <li><a href="generator.html">Trip Generator</a></li>
+          <li><a href="mood.html">Travel Mood</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <form id="newsletter-form" class="footer-newsletter">
+          <input type="email" id="newsletter-email" placeholder="Your email address" aria-label="Email address" required />
+          <button type="submit" class="btn btn-primary" style="width:100%;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 TravelNest. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/global.js"></script>
+  <script src="js/budget.js"></script>
+</body>
+</html>
